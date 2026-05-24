@@ -7,8 +7,7 @@ This information system will be a "LTO Database Management System", designed to 
 1. Change line 9 in connect.py. Replace <yourpassword> with your actual MySQL root password.
 2. Open a terminal in the root directory of your project and execute 'python main.py'
 
-#### Team Members
-* Section ST2-8L
+#### Team Members (Section ST2-8L)
 * Agapay, Aries
 * Labramonte, Nathalie
 * Sabado, Krisha Lei
