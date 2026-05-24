@@ -251,22 +251,22 @@ VALUES
 -- BASELINE PROJECT SPECIFICATIONS QUERIES
 -- =====================================================================
 -- 1 View all registered drivers (Filtered)
-SELECT * FROM driver WHERE license_type = 'Non-Professional' AND license_status = 'Active' AND sex = 'F' AND date_of_birth BETWEEN '1990-01-01' AND '2005-01-01';
+-- SELECT * FROM driver WHERE license_type = 'Non-Professional' AND license_status = 'Active' AND sex = 'F' AND date_of_birth BETWEEN '1990-01-01' AND '2005-01-01';
 
 -- 2 View all vehicles owned by a given driver
-SELECT d.first_name, d.last_name, v.plate_number, v.make, v.model FROM vehicle v JOIN driver d ON v.license_number = d.license_number WHERE d.last_name = 'De Los Santos';
+-- SELECT d.first_name, d.last_name, v.plate_number, v.make, v.model FROM vehicle v JOIN driver d ON v.license_number = d.license_number WHERE d.last_name = 'De Los Santos';
 
 -- 3 View all vehicles with expired registrations as of a given date
-SELECT plate_number, registration_status, expiration_date FROM registration WHERE expiration_date < '2026-04-12';
+-- SELECT plate_number, registration_status, expiration_date FROM registration WHERE expiration_date < '2026-04-12';
 
 -- 4 View all drivers with expired or suspended licenses
-SELECT first_name, last_name, license_number, license_status FROM driver WHERE license_status = 'Expired' OR license_status = 'Suspended';
+-- SELECT first_name, last_name, license_number, license_status FROM driver WHERE license_status = 'Expired' OR license_status = 'Suspended';
 
 -- 5 Traffic violations by a driver within a date range
-SELECT violation_date, location, violation_status FROM violation WHERE license_number = 'N01-23-000001' AND violation_date >= '2025-01-01' AND violation_date <= '2025-12-31';
+-- SELECT violation_date, location, violation_status FROM violation WHERE license_number = 'N01-23-000001' AND violation_date >= '2025-01-01' AND violation_date <= '2025-12-31';
 
 -- 6 Total number of violations per type for a given year
-SELECT vt.violation_name, COUNT(*) AS total_violations FROM violationType vt JOIN violation v ON vt.violation_id = v.violation_id WHERE YEAR(v.violation_date) = 2025 GROUP BY vt.violation_name;
+-- SELECT vt.violation_name, COUNT(*) AS total_violations FROM violationType vt JOIN violation v ON vt.violation_id = v.violation_id WHERE YEAR(v.violation_date) = 2025 GROUP BY vt.violation_name;
 
 -- 7 Vehicles involved in violations within a given city/region
-SELECT DISTINCT vh.plate_number, vh.make, vh.model, v.location FROM vehicle vh JOIN violation v ON vh.plate_number = v.plate_number WHERE v.location LIKE '%Calamba%';
+-- SELECT DISTINCT vh.plate_number, vh.make, vh.model, v.location FROM vehicle vh JOIN violation v ON vh.plate_number = v.plate_number WHERE v.location LIKE '%Calamba%';
